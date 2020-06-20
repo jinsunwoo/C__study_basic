@@ -74,14 +74,49 @@ int main(void)
         }
     }
 
-    // 별 피라미드
-    for (int i = 1; i <= 5; i++)
+    /* 
+    별 피라미드 찍기
+    *
+    **
+    ***
+    ****
+    *****
+
+    */
+
+    for (int i = 0; i < 5; i++)
     {
-        for (int j = 1; j <= i; j++)
+        for (int j = 0; j <= i; j++)
         {
             printf("*");
         }
         printf("\n");
     }
+
+    /* 
+    별 피라미드 빈공간 포함해서 찍기
+        *
+       **
+      ***
+     ****
+    *****
+
+    */
+
+    for (int i = 0; i < 5; i++)
+    {
+        for (int k = 0; k < 4 - i; k++)
+        {
+            printf(" ");
+        }
+
+        for (int j = 0; j <= i; j++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+
     return 0;
 }
+
