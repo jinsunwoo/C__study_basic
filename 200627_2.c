@@ -1,8 +1,8 @@
-// 코드 수정 필요. 내일 다시 체크 할 것
 
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <math.h>
 
 int getRandomNumber(int level);
 void showQuestion(int level, int num1, int num2);
@@ -12,7 +12,7 @@ void fail();
 int main(void)
 {
     // 문이 5개가 있고, 각 문마다 점점 어려운 수식 퀴즈 출제 (랜덤)
-    // 맞히면 통과, 틀리면 실패
+    // 맞히면 통과, 틀리면 실패 => 종합, 5개 중 몇개 맞췄는지 알려줌
 
     srand(time(NULL));
     int count = 0; // 맞힌 문제 갯수
@@ -50,7 +50,7 @@ int main(void)
 
 int getRandomNumber(int level)
 {
-    return rand() % (level * 7) + 1;
+    return rand() % (int)(pow(10, level)) + 1;
 }
 
 void showQuestion(int level, int num1, int num2)
